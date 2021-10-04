@@ -1,25 +1,39 @@
 import logo from './logo.svg';
 import './App.css';
+import { connect, useStore } from "react-redux";
+import { startAction } from "./actions/startAction"
+import { stopAction } from "./actions/stopAction"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+function App(props) {
+    const store = useStore()
+    return ( <
+        div className = "App" >
+        <
+        header className = "App-header" >
 
-export default App;
+        = { log o }
+        className = { "Ap p - logo " + props.rotating ? " " : " app-logo-paused" }
+        alogo "  = {pro p s.rotating ? props.stopAction : props.startAction } / > <
+        p >
+        Edit < code > src / App.js < /code> and save to reload. < /
+        p > <
+        a className = "App-link"
+        reac t js.org "
+        "  
+        oopener nor e ferrer " >
+        eact <
+        /a> < /
+        header > <
+        /div>
+
+    }
+    const mapStateToProps = state => ({
+
+
+                const mapDispatchToProps = dispatch => ({
+                        () => dispatch(startAction),
+                        stopAction: () => dispatch(stopAction)
+                    }
+
+
+                    apStateToProps, mapDispatchToProps)(App);
